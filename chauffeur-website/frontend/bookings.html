@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - LuxeRide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold text-gray-800">
+                        <span class="text-blue-600">Luxe</span>Ride
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-800 hover:text-blue-600 transition-colors">Home</a>
+                    <a href="/booking.html" class="text-gray-800 hover:text-blue-600 transition-colors">Book a Ride</a>
+                    <a href="/bookings.html" class="text-blue-600 font-semibold">My Bookings</a>
+                    <a href="/about.html" class="text-gray-800 hover:text-blue-600 transition-colors">About</a>
+                    <a href="/login.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">Login</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-2xl text-gray-800"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="/" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Home</a>
+            <a href="/booking.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Book a Ride</a>
+            <a href="/bookings.html" class="block py-2 px-4 text-blue-600 bg-gray-100">My Bookings</a>
+            <a href="/about.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">About</a>
+            <a href="/login.html" class="block py-2 px-4 text-gray-800 hover:bg-gray-100">Login</a>
+        </div>
+    </nav>
+
+    <!-- Bookings Section -->
+    <div class="pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-800">My Bookings</h1>
+                <p class="text-gray-600 mt-2">View and manage your ride bookings</p>
+            </div>
+
+            <!-- Booking Filters -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-6">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex-1 min-w-[200px]">
+                        <input type="text" 
+                               placeholder="Search bookings..." 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="flex gap-4">
+                        <select class="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">All Status</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <select class="px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Rides -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold mb-4">Upcoming Rides</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Upcoming Ride Card 1 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-2">Upcoming</span>
+                                <h3 class="text-lg font-semibold">Airport Transfer</h3>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-gray-600">Booking #12345</p>
+                                <p class="text-lg font-semibold">$120.00</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Pickup</p>
+                                    <p>123 Main St, Los Angeles, CA 90001</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Dropoff</p>
+                                    <p>LAX Airport, Los Angeles, CA 90045</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-calendar text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Date & Time</p>
+                                    <p>March 15, 2024 - 09:30 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="text-blue-600 hover:text-blue-800 font-medium">
+                                View Details
+                            </button>
+                            <button class="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-50 transition-colors">
+                                Cancel Ride
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Ride Card 2 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-2">Upcoming</span>
+                                <h3 class="text-lg font-semibold">Business Meeting</h3>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-gray-600">Booking #12346</p>
+                                <p class="text-lg font-semibold">$85.00</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Pickup</p>
+                                    <p>456 Business Ave, Beverly Hills, CA 90210</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-red-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Dropoff</p>
+                                    <p>789 Corporate Blvd, Los Angeles, CA 90017</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-calendar text-blue-500 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">Date & Time</p>
+                                    <p>March 16, 2024 - 02:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button class="text-blue-600 hover:text-blue-800 font-medium">
+                                View Details
+                            </button>
+                            <button class="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-50 transition-colors">
+                                Cancel Ride
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Rides -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Past Rides</h2>
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booking ID</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Route</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">#12344</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mar 10, 2024</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Downtown LA → Santa Monica</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$95.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Completed
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                                    <button>View Details</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">#12343</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mar 5, 2024</td>
+                                <td class="px-6 py-4 text-sm text-gray-500">Beverly Hills → LAX Airport</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$75.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        Cancelled
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-800">
+                                    <button>View Details</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex items-center justify-between bg-white px-4 py-3 border-t border-gray-200 sm:px-6 mt-4 rounded-lg">
+                    <div class="flex-1 flex justify-between sm:hidden">
+                        <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                            Previous
+                        </button>
+                        <button class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                            Next
+                        </button>
+                    </div>
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm text-gray-700">
+                                Showing <span class="font-medium">1</span> to <span class="font-medium">2</span> of <span class="font-medium">2</span> results
+                            </p>
+                        </div>
+                        <div>
+                            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                <button class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">Previous</span>
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-blue-600 hover:bg-gray-50">
+                                    1
+                                </button>
+                                <button class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">Next</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="text-blue-400">Luxe</span>Ride
+                    </h3>
+                    <p class="text-gray-400">Your trusted partner for premium chauffeur services.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/booking.html" class="text-gray-400 hover:text-white transition-colors">Book a Ride</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@luxeride.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Luxury Lane, Beverly Hills, CA 90210</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 LuxeRide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
